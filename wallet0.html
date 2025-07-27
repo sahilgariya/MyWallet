@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Brown Wallet</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0e6dc;
+      margin: 0;
+    }
+
+    .wallet-container {
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .wallet {
+      width: 200px;
+      height: 120px;
+      background: #8B4513; /* Brown */
+      border: 4px solid #5a2d0c;
+      border-radius: 10px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    .wallet.open {
+      transform: rotateY(160deg);
+    }
+
+    .wallet::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #A0522D; /* Inner brown */
+      border-radius: 10px;
+      transform: rotateY(180deg);
+      backface-visibility: hidden;
+    }
+
+    .wallet::after {
+      content: '💳';
+      position: absolute;
+      top: 40%;
+      left: 35%;
+      font-size: 2em;
+      color: white;
+    }
+
+    .label {
+      text-align: center;
+      margin-top: 10px;
+      font-family: sans-serif;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wallet-container" onclick="toggleWallet()">
+  <div class="wallet" id="wallet"></div>
+  <div class="label">Click the Wallet</div>
+</div>
+
+<script>
+  function toggleWallet() {
+    document.getElementById("wallet").classList.toggle("open");
+    window.location.href = "wallet.html";
+  }
+</script>
+
+</body>
+</html>

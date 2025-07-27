@@ -1,0 +1,71 @@
+<!--
+  Project: My Wallet by Sahil
+  Description: Full static business website with UPI QR payment, secret code approval, and personal wallet functionality.
+  Technologies: HTML, CSS, JavaScript (localStorage), FormSubmit (for email form)
+  Folder structure:
+    /index.html         => Homepage with payment, unlock code, and form
+    /wallet.html        => Unlocked user wallet (10 slots)
+    /faq.html           => FAQ page
+    /contact.html       => Support form
+    /css/style.css      => All site styles
+    /js/unlock.js       => JS logic for unlocking wallet
+    /images/qr.png      => Placeholder QR code (replace later)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wallet by Sahil</title>
+  <link rel="stylesheet" href="cssstyle.css">
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <h1>My Wallet by Sahil</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="wallet0.html">My Wallet</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    
+      
+    </nav>
+
+  </header>
+
+  <!-- Main Wallet Offer Section -->
+  <section class="wallet-offer">
+    <h2>Buy Your Digital Wallet</h2>
+    <p>✅ 10 secure document slots</p>
+    <p>💰 Price: ₹999 (only for 20 person then 1999)</p>
+    <p>🛡️ Shareable with others, saved forever on your device</p>
+    <img src="imageqr.jpeg" alt="Scan to Pay QR Code" class="qr-code">
+  </section>
+
+  <!-- Transaction ID Submit Form -->
+  <section class="payment-form">
+    <h3>Submit Your UPI Payment Details</h3>
+    <!-- Replace YOUR_EMAIL with your real email address -->
+    <form action="https://formsubmit.co/mywalletbysahil01@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="upi_id" placeholder="UPI Transaction ID" required>
+      <input type="email" name="email" placeholder="Your Email (for secret code)" required>
+      <button type="submit">Submit Payment</button>
+    </form>
+  </section>
+
+  <!-- Secret Code Unlock Section -->
+  <section class="unlock-wallet">
+    <h3>Already Got Your Secret Code?</h3>
+    <p>Enter your unique unlock code to access your personal wallet.</p>
+    <input type="text" id="secretCode" placeholder="Enter your secret code">
+    <button onclick="checkCode()">Unlock My Wallet</button>
+    <p id="unlockMessage"></p>
+  </section>
+
+  <script src="jsscript.js"></script>
+</body>
+</html>

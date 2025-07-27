@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wallet – Sahil</title>
+  <link rel="stylesheet" href="wallet.css">
+  <style>
+    
+    /* Purse-style brown background and layout */
+    body {
+      background-color: #f4f1ee;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .purse {
+      background-color: #8B4513; /* Brown purse */
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .purse h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .slots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .slot {
+      background-color: #fff8f0;
+      border: 2px dashed #a0522d;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .slot h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+    .slot input[type="file"] {
+      display: none;
+    }
+    .slot label {
+      display: inline-block;
+      background-color: #a0522d;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .preview {
+      font-size: 0.85rem;
+      color: #333;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+<div id="wallet-container">
+  <script>// Block access if wallet is not unlocked
+  if (localStorage.getItem("walletUnlocked") !== "true") {
+  window.location.href = "verify.html"; // send them back to code check
+  }
+  </script></div>
+  <div class="purse">
+    <h2>👜 My Digital Wallet</h2>
+    <div class="slots">
+      <!-- 10 slots with Front + Back upload -->
+      <!-- Repeatable Slot -->
+      <!-- Each slot has: Front + Back uploader and preview -->
+      <!-- You can rename the labels to Document type later -->
+      <!-- Slot Loop -->
+      <!-- We’ll show 10 of these -->
+      <!-- SLOT TEMPLATE -->
+      <!-- You can duplicate this 10 times -->
+      <!-- You can rename Slot 1 → Aadhar Card, etc. -->
+      <!-- Slot 1 -->
+      <div class="slots">
+  <!-- Slot 1 -->
+  <div class="slot" id="slot1">
+    <h3>Slot 1 – Document</h3>
+    <label for="file1f">Upload Front</label>
+    <input type="file" id="file1f" onchange="saveFile(event, 1, 'front')">
+    <div class="preview" id="preview1f">Front: No file uploaded</div>
+
+    <label for="file1b">Upload Back</label>
+    <input type="file" id="file1b" onchange="saveFile(event, 1, 'back')">
+    <div class="preview" id="preview1b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 2 -->
+  <div class="slot" id="slot2">
+    <h3>Slot 2 – Document</h3>
+    <label for="file2f">Upload Front</label>
+    <input type="file" id="file2f" onchange="saveFile(event, 2, 'front')">
+    <div class="preview" id="preview2f">Front: No file uploaded</div>
+
+    <label for="file2b">Upload Back</label>
+    <input type="file" id="file2b" onchange="saveFile(event, 2, 'back')">
+    <div class="preview" id="preview2b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 3 -->
+  <div class="slot" id="slot3">
+    <h3>Slot 3 – Document</h3>
+    <label for="file3f">Upload Front</label>
+    <input type="file" id="file3f" onchange="saveFile(event, 3, 'front')">
+    <div class="preview" id="preview3f">Front: No file uploaded</div>
+
+    <label for="file3b">Upload Back</label>
+    <input type="file" id="file3b" onchange="saveFile(event, 3, 'back')">
+    <div class="preview" id="preview3b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 4 -->
+  <div class="slot" id="slot4">
+    <h3>Slot 4 – Document</h3>
+    <label for="file4f">Upload Front</label>
+    <input type="file" id="file4f" onchange="saveFile(event, 4, 'front')">
+    <div class="preview" id="preview4f">Front: No file uploaded</div>
+
+    <label for="file4b">Upload Back</label>
+    <input type="file" id="file4b" onchange="saveFile(event, 4, 'back')">
+    <div class="preview" id="preview4b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 5 -->
+  <div class="slot" id="slot5">
+    <h3>Slot 5 – Document</h3>
+    <label for="file5f">Upload Front</label>
+    <input type="file" id="file5f" onchange="saveFile(event, 5, 'front')">
+    <div class="preview" id="preview5f">Front: No file uploaded</div>
+
+    <label for="file5b">Upload Back</label>
+    <input type="file" id="file5b" onchange="saveFile(event, 5, 'back')">
+    <div class="preview" id="preview5b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 6 -->
+  <div class="slot" id="slot6">
+    <h3>Slot 6 – Document</h3>
+    <label for="file6f">Upload Front</label>
+    <input type="file" id="file6f" onchange="saveFile(event, 6, 'front')">
+    <div class="preview" id="preview6f">Front: No file uploaded</div>
+
+    <label for="file6b">Upload Back</label>
+    <input type="file" id="file6b" onchange="saveFile(event, 6, 'back')">
+    <div class="preview" id="preview6b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 7 -->
+  <div class="slot" id="slot7">
+    <h3>Slot 7 – Document</h3>
+    <label for="file7f">Upload Front</label>
+    <input type="file" id="file7f" onchange="saveFile(event, 7, 'front')">
+    <div class="preview" id="preview7f">Front: No file uploaded</div>
+
+    <label for="file7b">Upload Back</label>
+    <input type="file" id="file7b" onchange="saveFile(event, 7, 'back')">
+    <div class="preview" id="preview7b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 8 -->
+  <div class="slot" id="slot8">
+    <h3>Slot 8 – Document</h3>
+    <label for="file8f">Upload Front</label>
+    <input type="file" id="file8f" onchange="saveFile(event, 8, 'front')">
+    <div class="preview" id="preview8f">Front: No file uploaded</div>
+
+    <label for="file8b">Upload Back</label>
+    <input type="file" id="file8b" onchange="saveFile(event, 8, 'back')">
+    <div class="preview" id="preview8b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 9 -->
+  <div class="slot" id="slot9">
+    <h3>Slot 9 – Document</h3>
+    <label for="file9f">Upload Front</label>
+    <input type="file" id="file9f" onchange="saveFile(event, 9, 'front')">
+    <div class="preview" id="preview9f">Front: No file uploaded</div>
+
+    <label for="file9b">Upload Back</label>
+    <input type="file" id="file9b" onchange="saveFile(event, 9, 'back')">
+    <div class="preview" id="preview9b">Back: No file uploaded</div>
+  </div>
+
+  <!-- Slot 10 -->
+  <div class="slot" id="slot10">
+    <h3>Slot 10 – Document</h3>
+    <label for="file10f">Upload Front</label>
+    <input type="file" id="file10f" onchange="saveFile(event, 10, 'front')">
+    <div class="preview" id="preview10f">Front: No file uploaded</div>
+
+    <label for="file10b">Upload Back</label>
+    <input type="file" id="file10b" onchange="saveFile(event, 10, 'back')">
+    <div class="preview" id="preview10b">Back: No file uploaded</div>
+  </div>
+</div>
+
+  <!-- Repeat this div for Slot 2 to Slot 10 (you can change names too) -->
+  <!-- Copy-paste and just change the numbers (2, 3, ... 10) -->
+  <!-- For example: file2f, preview2f, etc. -->
+
+</div>
+
+  </div>  <!-- JavaScript logic for front/back localStorage -->  <script>
+    // On page load, read all saved file names
+    window.onload = function () {
+      for (let i = 1; i <= 10; i++) {
+        ['front', 'back'].forEach(side => {
+          const key = "wallet_slot${i}_${side}";
+          const saved = localStorage.getItem(key);
+          if (saved) {
+            document.getElementById(`preview${i}${side[0]}`).textContent =
+              `${side.charAt(0).toUpperCase() + side.slice(1)}: Uploaded - ${saved}`;
+          }
+        });
+      }
+    };
+
+    // Save uploaded file name into localStorage
+    function saveFile(event, slot, side) {
+      const file = event.target.files[0];
+      if (file) {
+        const key ="wallet_slot${slot}_${side}";
+        localStorage.setItem(key, file.name);
+        document.getElementById(`preview${slot}${side[0]}`).textContent =
+          `${side.charAt(0).toUpperCase() + side.slice(1)}: Uploaded - ${file.name}`;
+      }
+    }
+  </script></body>
+</html>
