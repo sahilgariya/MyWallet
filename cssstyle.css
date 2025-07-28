@@ -144,3 +144,37 @@ button:hover {
   font-size: 15px;
   line-height: 1.6;
 }
+
+.contact {
+  max-width: 500px;
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.contact form {
+  text-align: left; /* Labels and inputs aligned neatly */
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact button {
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background-color: #333;
+}
