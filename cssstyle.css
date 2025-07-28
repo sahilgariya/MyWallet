@@ -6,11 +6,28 @@ body {
   padding: 0;
   color: #333;
 }
+
+wallet-link {
+  display: block;
+  text-decoration: none;
+  color: inherit; /* Keep original text color */
+  padding: 20px;
+  border: 2px solid brown;
+  border-radius: 10px;
+  background-color: #fffbe7;
+  transition: background 0.3s;
+}
+
+wallet-link:hover {
+  background-color: #ffe08a; /* Light yellow on hover */
+}
+
 header {
   background-color: #004aad;
   color: white;
   padding: 1rem;
   text-align: center;
+
 }
 nav a {
   margin: 0 10px;
