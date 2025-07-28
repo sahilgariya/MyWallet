@@ -49,21 +49,24 @@ wallet-offer a {
   color: inherit;
 }
 
-wallet-link {
-  display: block;
+.wallet-link {
   text-decoration: none;
-  color: inherit; /* Keep original text color */
+  color: inherit;
+  display: block;
+}
+
+.wallet-offer {
   padding: 20px;
-  border: 2px solid brown;
+  border: 2px solid #007bff;
   border-radius: 10px;
-  background-color: #fffbe7;
-  transition: background 0.3s;
+  background: white;
+  transition: 0.3s;
 }
 
-wallet-link:hover {
-  background-color: #ffe08a; /* Light yellow on hover */
+.wallet-offer:hover {
+  background: #e6f0ff;
+  cursor: pointer;
 }
-
 header {
   background-color: #004aad;
   color: white;
