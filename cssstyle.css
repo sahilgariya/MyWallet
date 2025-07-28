@@ -137,6 +137,7 @@ button:hover {
 .contact input,
 .contact textarea,
 .contact button {
+  font-size: 20px;
   width: 100%;
   padding: 10px;
   margin: 8px 0;
@@ -146,6 +147,7 @@ button:hover {
 }
 
 .contact button {
+  font-size: 18px;
   background-color: black;
   color: white;
   border: none;
