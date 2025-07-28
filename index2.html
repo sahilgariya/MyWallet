@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wallet by Sahil</title>
+  <link rel="stylesheet" href="cssstyle.css">
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <h1>My Wallet by Sahil</h1>
+
+
+  </header>
+
+  <!-- Main Wallet Offer Section -->
+  <section class="wallet-offer">
+    <img src="imageqr.jpeg" alt="Scan to Pay QR Code" class="qr-code">
+  </section>
+
+  <!-- Transaction ID Submit Form -->
+  <section class="payment-form">
+    <h3>Submit Your UPI Payment Details</h3>
+    <!-- Replace YOUR_EMAIL with your real email address -->
+    <form action="https://formsubmit.co/mywalletbysahil01@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="upi_id" placeholder="UPI Transaction ID" required>
+      <input type="email" name="email" placeholder="Your Email (for secret code)" required>
+      <button type="submit">Submit Payment</button>
+    </form>
+  </section>
+
+  <!-- Secret Code Unlock Section -->
+  <section class="unlock-wallet">
+    <h3>Already Got Your Secret Code?</h3>
+    <p>Enter your unique unlock code to access your personal wallet.</p>
+    <input type="text" id="secretCode" placeholder="Enter your secret code">
+    <button onclick="checkCode()">Unlock My Wallet</button>
+    <p id="unlockMessage"></p>
+  </section>
+
+  <script src="jsscript.js"></script>
+</body>
+</html>
