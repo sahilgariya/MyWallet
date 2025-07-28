@@ -39,10 +39,7 @@ wallet-offer h2 {
   transition: 0.3s;
 }
 
-.wallet-offer:hover {
-  background: #e6f0ff;
-  cursor: pointer;
-}
+
 header {
   background-color: #004aad;
   color: white;
